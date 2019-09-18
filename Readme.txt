@@ -68,7 +68,10 @@ below is optional to include some individual files
             "public:copy": "ncp ./src/public/  ./dist/public/",
             "views:copy": "ncp ./src/views/  ./dist/views/",
             "clean": "rimraf ./dist",
-    "build": "yarn run clean && tsc && yarn run public:copy && yarn run views:copy",
+            //For development
+    "build:dev": "yarn run clean && tsc && yarn run public:copy && yarn run views:copy",
+    "build": "yarn public:copy && yarn views:copy",
+
             "dev": "nodemon ./src/server.ts"
 }
 

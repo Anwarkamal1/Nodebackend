@@ -11,7 +11,8 @@
     "views:copy": "ncp ./src/views/ ./dist/views/",
     "start:dev": "tsc &&  env-cmd -f ./config/.env node ./dist/server.js",
     "clean": "rimraf ./dist",
-    "build": "yarn clean && tsc && yarn public:copy && yarn views:copy",
+    "build:prod": "yarn run clean && tsc && yarn run public:copy && yarn run views:copy",
+    "build": "yarn public:copy && yarn views:copy",
     "dev": "nodemon ./src/server.ts"
   },
   "devDependencies": {
@@ -21,15 +22,15 @@
     "@types/pug": "^2.0.4",
     "env-cmd": "^10.0.1",
     "nodemon": "^1.19.2",
-    "ts-node": "^8.4.1"
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.7.1",
     "ncp": "^2.0.0",
-    "pug": "^2.0.4",
-    "rimraf": "^3.0.0",
-    "typescript": "^3.6.3"
+    "pug": "^2.0.4"
   }
 }
