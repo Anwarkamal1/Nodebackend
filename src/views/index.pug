@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        block head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel ='stylesheet' href='/css/main.css')
+        //- link(rel = 'shortcut icon' type='image/png' href='/img/favicon.png')
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+        
+        //- For Stripe to work on frontend
+        //- title Natours | #{tour}
+        //- - let pageTitle = title || 'Exciting tours for adventurous people';
+        //- title Natours | #{pageTitle}
+        title #{title || 'Exciting tours for adventurous people'}
+    //- we can then use this data-alert app wide by puting it as query params to every route like 
+    //- https://tour-valley.herokuapp.com/my-tours?alert=booking
+    //- https://tour-valley.herokuapp.com/tours/:_id?alert=onetour
+    //- and so on
+    body(data-alert=`${alert ? alert: ''}`)
+        // Header
+        include _partials/_header
+
+        // Content
+        block content
+            h1 This is a placeholder heading
+        
+        // Footer
+        //- include _footer
+        
+
+
