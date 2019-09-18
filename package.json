@@ -4,6 +4,10 @@
   "description": "A typescript Nodejs Api",
   "main": "server.js",
   "author": "Anwar kamal",
+  "engines": {
+    "node": "10.16.0",
+    "yarn": "1.17.3"
+  },
   "license": "MIT",
   "scripts": {
     "start": "node ./dist/server.js",
@@ -11,8 +15,8 @@
     "views:copy": "ncp ./src/views/ ./dist/views/",
     "start:dev": "tsc &&  env-cmd -f ./config/.env node ./dist/server.js",
     "clean": "rimraf ./dist",
-    "build:prod": "yarn run clean && tsc && yarn run public:copy && yarn run views:copy",
-    "build": "yarn public:copy && yarn views:copy",
+    "build:prod": "npm run clean && tsc && npm run public:copy && npm run views:copy",
+    "build": "npm run public:copy && npm run views:copy",
     "dev": "nodemon ./src/server.ts"
   },
   "devDependencies": {
